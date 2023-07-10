@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Jogo da velha</title>
+  </head>
+  <body>
+    <header>
+      <h2>Joga da velha</h2>
+      <div class="players">
+        <div><label>Jogador 1</label> <input type="text" id="player1" /> X</div>
+        <div><label>Jogador 2</label> <input type="text" id="player2" /> O</div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="gaps">
+          <input type="text" class="gap" id="gap1" />
+          <input type="text" class="gap" id="gap2" />
+          <input type="text" class="gap" id="gap3" />
+          <input type="text" class="gap" id="gap4" />
+          <input type="text" class="gap" id="gap5" />
+          <input type="text" class="gap" id="gap6" />
+          <input type="text" class="gap" id="gap7" />
+          <input type="text" class="gap" id="gap8" />
+          <input type="text" class="gap" id="gap9" />
+        </div>
+        <div id="player" class="player1"></div>
+        <button id="passTurn">Passar a vez</button>
+        <button id="reset">Reiniciar</button>
+      </section>
+    </main>
+  </body>
+</html>
