@@ -14,30 +14,35 @@
     <title>Jogo da velha</title>
   </head>
   <body>
-    <header>
-      <h2>Joga da velha</h2>
-      <div class="players">
-        <div><label>Jogador 1</label> <input type="text" id="player1" /> X</div>
-        <div><label>Jogador 2</label> <input type="text" id="player2" /> O</div>
-      </div>
-    </header>
-    <main>
-      <section>
-        <div class="gaps">
-          <input type="text" class="gap" id="gap1" />
-          <input type="text" class="gap" id="gap2" />
-          <input type="text" class="gap" id="gap3" />
-          <input type="text" class="gap" id="gap4" />
-          <input type="text" class="gap" id="gap5" />
-          <input type="text" class="gap" id="gap6" />
-          <input type="text" class="gap" id="gap7" />
-          <input type="text" class="gap" id="gap8" />
-          <input type="text" class="gap" id="gap9" />
-        </div>
-        <div id="player" class="player1"></div>
-        <button id="passTurn">Passar a vez</button>
-        <button id="reset">Reiniciar</button>
-      </section>
-    </main>
+    <div class="container">
+      <main>
+        <header>
+          <h2>Jogo da velha</h2>
+          <div class="players">
+            <div>
+              <label>Jogador 1</label> <input type="text" id="player1" /> X
+            </div>
+            <div>
+              <label>Jogador 2</label> <input type="text" id="player2" /> O
+            </div>
+          </div>
+        </header>
+        <section>
+          <div class="gaps">
+            <input type="text" class="gap" id="gap1" />
+            <input type="text" class="gap" id="gap2" />
+            <input type="text" class="gap" id="gap3" />
+            <input type="text" class="gap" id="gap4" />
+            <input type="text" class="gap" id="gap5" />
+            <input type="text" class="gap" id="gap6" />
+            <input type="text" class="gap" id="gap7" />
+            <input type="text" class="gap" id="gap8" />
+            <input type="text" class="gap" id="gap9" />
+          </div>
+          <div id="player" class="player1"></div>
+          <button id="reset">Reiniciar</button>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

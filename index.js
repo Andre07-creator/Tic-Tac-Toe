@@ -10,7 +10,7 @@ const gap9 = document.getElementById("gap9");
 
 const gap = document.querySelectorAll(".gap");
 
-const passTurn = document.getElementById("passTurn");
+///const passTurn = document.getElementById("passTurn");
 const player = document.getElementById("player");
 
 const inputPlayer1 = document.getElementById("player1");
@@ -28,6 +28,7 @@ gap1.addEventListener("click", function (ev) {
     gap1.innerText = "O";
   }
   gap1.disabled = true;
+  passTurn();
 });
 gap2.addEventListener("click", function (ev) {
   ev.preventDefault();
@@ -39,6 +40,7 @@ gap2.addEventListener("click", function (ev) {
     gap2.innerText = "O";
   }
   gap2.disabled = true;
+  passTurn();
 });
 gap3.addEventListener("click", function (ev) {
   ev.preventDefault();
@@ -50,6 +52,7 @@ gap3.addEventListener("click", function (ev) {
     gap3.innerText = "O";
   }
   gap3.disabled = true;
+  passTurn();
 });
 gap4.addEventListener("click", function (ev) {
   ev.preventDefault();
@@ -61,6 +64,7 @@ gap4.addEventListener("click", function (ev) {
     gap4.innerText = "O";
   }
   gap4.disabled = true;
+  passTurn();
 });
 gap5.addEventListener("click", function (ev) {
   ev.preventDefault();
@@ -72,6 +76,7 @@ gap5.addEventListener("click", function (ev) {
     gap5.innerText = "O";
   }
   gap5.disabled = true;
+  passTurn();
 });
 gap6.addEventListener("click", function (ev) {
   ev.preventDefault();
@@ -83,6 +88,7 @@ gap6.addEventListener("click", function (ev) {
     gap6.innerText = "O";
   }
   gap6.disabled = true;
+  passTurn();
 });
 gap7.addEventListener("click", function (ev) {
   ev.preventDefault();
@@ -94,6 +100,7 @@ gap7.addEventListener("click", function (ev) {
     gap7.innerText = "O";
   }
   gap7.disabled = true;
+  passTurn();
 });
 gap8.addEventListener("click", function (ev) {
   ev.preventDefault();
@@ -105,6 +112,7 @@ gap8.addEventListener("click", function (ev) {
     gap8.innerText = "O";
   }
   gap8.disabled = true;
+  passTurn();
 });
 gap9.addEventListener("click", function (ev) {
   ev.preventDefault();
@@ -116,9 +124,10 @@ gap9.addEventListener("click", function (ev) {
     gap9.innerText = "O";
   }
   gap9.disabled = true;
+  passTurn();
 });
 
-passTurn.addEventListener("click", function () {
+function passTurn() {
   //// X
   const winner = document.createElement("span");
   if (gap1.value === "X" && gap2.value === "X" && gap3.value === "X") {
@@ -126,7 +135,9 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
-    winner.style.color = '#ff0000';
+    gap1.classList = "green-win";
+    gap2.classList = "green-win";
+    gap3.classList = "green-win";
     winner.innerText = inputPlayer1.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("X venceu");
@@ -137,6 +148,9 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    gap4.classList = "green-win";
+    gap5.classList = "green-win";
+    gap6.classList = "green-win";
     winner.innerText = inputPlayer1.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("X venceu");
@@ -147,6 +161,9 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    gap7.classList = "green-win";
+    gap8.classList = "green-win";
+    gap9.classList = "green-win";
     winner.innerText = inputPlayer1.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("X venceu");
@@ -157,6 +174,9 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    gap1.classList = "green-win";
+    gap5.classList = "green-win";
+    gap9.classList = "green-win";
     winner.innerText = inputPlayer1.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("X venceu");
@@ -167,6 +187,9 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    gap7.classList = "green-win";
+    gap5.classList = "green-win";
+    gap3.classList = "green-win";
     winner.innerText = inputPlayer1.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("X venceu");
@@ -177,6 +200,9 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    gap1.classList = "green-win";
+    gap4.classList = "green-win";
+    gap7.classList = "green-win";
     winner.innerText = inputPlayer1.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("X venceu");
@@ -187,6 +213,9 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    gap2.classList = "green-win";
+    gap5.classList = "green-win";
+    gap8.classList = "green-win";
     winner.innerText = inputPlayer1.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("X venceu");
@@ -197,6 +226,9 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    gap3.classList = "green-win";
+    gap6.classList = "green-win";
+    gap9.classList = "green-win";
     winner.innerText = inputPlayer1.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("X venceu");
@@ -208,7 +240,10 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
-    winner.innerText = inputPlayer1.value + " VENCEU!!!";
+    gap1.classList = "green-win";
+    gap2.classList = "green-win";
+    gap3.classList = "green-win";
+    winner.innerText = inputPlayer2.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("O venceu");
     return;
@@ -218,7 +253,10 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
-    winner.innerText = inputPlayer1.value + " VENCEU!!!";
+    gap4.classList = "green-win";
+    gap5.classList = "green-win";
+    gap6.classList = "green-win";
+    winner.innerText = inputPlayer2.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("O venceu");
     return;
@@ -228,7 +266,10 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
-    winner.innerText = inputPlayer1.value + " VENCEU!!!";
+    gap7.classList = "green-win";
+    gap8.classList = "green-win";
+    gap9.classList = "green-win";
+    winner.innerText = inputPlayer2.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("O venceu");
     return;
@@ -238,7 +279,10 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
-    winner.innerText = inputPlayer1.value + " VENCEU!!!";
+    gap1.classList = "green-win";
+    gap5.classList = "green-win";
+    gap9.classList = "green-win";
+    winner.innerText = inputPlayer2.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("O venceu");
     return;
@@ -248,7 +292,10 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
-    winner.innerText = inputPlayer1.value + " VENCEU!!!";
+    gap7.classList = "green-win";
+    gap5.classList = "green-win";
+    gap3.classList = "green-win";
+    winner.innerText = inputPlayer2.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("O venceu");
     return;
@@ -258,7 +305,10 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
-    winner.innerText = inputPlayer1.value + " VENCEU!!!";
+    gap1.classList = "green-win";
+    gap4.classList = "green-win";
+    gap7.classList = "green-win";
+    winner.innerText = inputPlayer2.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("O venceu");
     return;
@@ -268,7 +318,10 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
-    winner.innerText = inputPlayer1.value + " VENCEU!!!";
+    gap2.classList = "green-win";
+    gap5.classList = "green-win";
+    gap8.classList = "green-win";
+    winner.innerText = inputPlayer2.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("O venceu");
     return;
@@ -278,7 +331,10 @@ passTurn.addEventListener("click", function () {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
-    winner.innerText = inputPlayer1.value + " VENCEU!!!";
+    gap3.classList = "green-win";
+    gap6.classList = "green-win";
+    gap9.classList = "green-win";
+    winner.innerText = inputPlayer2.value + " VENCEU!!!";
     player.appendChild(winner);
     console.log("O venceu");
     return;
@@ -328,7 +384,7 @@ passTurn.addEventListener("click", function () {
     player.classList.add("player1");
     player.appendChild(span);
   }
-});
+}
 const reset = document
   .getElementById("reset")
   .addEventListener("click", function () {
@@ -341,4 +397,11 @@ const reset = document
     });
     const removeSpan = document.querySelector("span");
     player.removeChild(removeSpan);
+    if (player.classList.contains("player2")) {
+      player.classList.remove("player2");
+    }
+    player.classList.add("player1");
+    gap.forEach(function (element) {
+      element.classList = "gap";
+    });
   });
