@@ -1,3 +1,5 @@
+//Variáveis que pega cada um dos elementos html das linhas e colunas
+//do jogo da velha
 const gap1 = document.getElementById("gap1");
 const gap2 = document.getElementById("gap2");
 const gap3 = document.getElementById("gap3");
@@ -8,21 +10,20 @@ const gap7 = document.getElementById("gap7");
 const gap8 = document.getElementById("gap8");
 const gap9 = document.getElementById("gap9");
 
+//Pega todos os elementos da classe gap
 const gap = document.querySelectorAll(".gap");
-
-///const passTurn = document.getElementById("passTurn");
+//id da mudança de jogador
 const player = document.getElementById("player");
 
 const inputPlayer1 = document.getElementById("player1");
 const inputPlayer2 = document.getElementById("player2");
-const allowdKeys = ["X", "O"];
 
+//Abaixo cada evento é inserido em cada uma das lacunas do jogo
 gap1.addEventListener("click", function (ev) {
   ev.preventDefault();
 
   if (player.classList.contains("player1")) {
     gap1.value = "X";
-    //gap1.innerText = "X";
   } else {
     gap1.value = "O";
     gap1.innerText = "O";
@@ -32,14 +33,19 @@ gap1.addEventListener("click", function (ev) {
 });
 gap2.addEventListener("click", function (ev) {
   ev.preventDefault();
+  //Testa se a classe player esta como player1
   if (player.classList.contains("player1")) {
     gap2.value = "X";
     gap2.innerText = "X";
-  } else {
+  }
+  //se não for player1 é player2
+  else {
     gap2.value = "O";
     gap2.innerText = "O";
   }
+  //desativa o botão
   gap2.disabled = true;
+  //chama a função de troca de turno
   passTurn();
 });
 gap3.addEventListener("click", function (ev) {
@@ -126,19 +132,24 @@ gap9.addEventListener("click", function (ev) {
   gap9.disabled = true;
   passTurn();
 });
-
+//função que passa o turno mudando a classe de player
 function passTurn() {
-  //// X
+  //Elemento criado para mostrar o resultado da partida
   const winner = document.createElement("span");
+  //Testa se o jogador 1 (X) ganhou a partida
   if (gap1.value === "X" && gap2.value === "X" && gap3.value === "X") {
+    //remove o span caso ele ja esteja criado
     const removeSpan = document.querySelector("span");
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    //Adiciona a cor verde para as lacunas onde o jogador ganhou
     gap1.classList = "green-win";
     gap2.classList = "green-win";
     gap3.classList = "green-win";
+    //adiciona a mensagem de vitória para o jogador
     winner.innerText = inputPlayer1.value + " VENCEU!!!";
+    //Manda para exibir na div player
     player.appendChild(winner);
     console.log("X venceu");
     return;
@@ -234,7 +245,7 @@ function passTurn() {
     console.log("X venceu");
     return;
   }
-  ////BOLA
+  //Testa se o jogador 2 (O) ganhou a partida
   if (gap1.value === "O" && gap2.value === "O" && gap3.value === "O") {
     const removeSpan = document.querySelector("span");
     if (removeSpan != null) {
@@ -339,8 +350,9 @@ function passTurn() {
     console.log("O venceu");
     return;
   }
-  ///EMPATE
+  ///Testa se o jogo deu empate
   if (
+    //se todas as lacunas forem diferentes de vazio deu empate
     gap1.value != "" &&
     gap2.value != "" &&
     gap3.value != "" &&
@@ -351,24 +363,28 @@ function passTurn() {
     gap8.value != "" &&
     gap9.value != ""
   ) {
+    //removendo o span
     const removeSpan = document.querySelector("span");
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    //exibe a mensage de empate
     winner.innerText = " EMPATE!!!";
     player.appendChild(winner);
     console.log("empate!!!");
     return;
   }
-
+  //Segue o jogo passando para o próximo jogador
   if (player.classList.contains("player1")) {
     const removeSpan = document.querySelector("span");
 
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    //muda de jogador
     const span = document.createElement("span");
     span.innerText = "Player 2: " + inputPlayer2.value + " - O";
+    //remove o player1 que é padrão e coloca como player2 na div player
     player.classList.remove("player1");
     player.classList.add("player2");
     player.appendChild(span);
@@ -378,6 +394,7 @@ function passTurn() {
     if (removeSpan != null) {
       player.removeChild(removeSpan);
     }
+    //remove o player2 que é padrão e coloca como player1 na div player
     const span = document.createElement("span");
     span.innerText = "Player 1: " + inputPlayer1.value + " - X";
     player.classList.remove("player2");
@@ -385,22 +402,29 @@ function passTurn() {
     player.appendChild(span);
   }
 }
+//reseta o jogo limpando todas as areas e reeiniciando o jogo
 const reset = document
   .getElementById("reset")
   .addEventListener("click", function () {
     document.getElementById("player1").value = "";
     document.getElementById("player2").value = "";
-    console.log(gap);
+    //um foreach que retira todos os elementos das lacunas gap
+    //e habilita novamente os botões
     gap.forEach(function (element) {
       element.value = "";
       element.disabled = false;
     });
+    //remove a mensagem da div player seja ela de vencedor ou empate
     const removeSpan = document.querySelector("span");
     player.removeChild(removeSpan);
+    //verifica se o player contem o id player2 e o remove
     if (player.classList.contains("player2")) {
       player.classList.remove("player2");
+      //Adiciona a clase player1 novamente o que é padrão
+      player.classList.add("player1");
     }
-    player.classList.add("player1");
+    //adiciona novamente a classe gap para cada um dos elementos
+    //das lacunas do jogo
     gap.forEach(function (element) {
       element.classList = "gap";
     });
